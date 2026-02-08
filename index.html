@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zingly - Professional Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="login-container">
+        <div class="logo">Zingly</div>
+        <p class="tagline">The world is yours to share.</p>
+
+        <div id="loginForm">
+            <input type="text" id="username" placeholder="Email, Phone or Username">
+            <input type="password" id="password" placeholder="Password">
+            <button class="login-btn" onclick="window.location.href='home.html'">Log In</button>
+        </div>
+
+        <div class="or-divider">OR</div>
+
+        <button class="google-btn">
+            <img src="https://www.gstatic.com/images/branding/product/1x/gsa_512dp.png" width="18" style="margin-right:8px">
+            Continue with Google
+        </button>
+
+        <div class="footer-text">
+            Don't have an account? <a href="#">Create ID</a>
+        </div>
+    </div>
+
+    <script>
+        function handleLogin() {
+            const user = document.getElementById('username').value;
+            const pass = document.getElementById('password').value;
+
+            if(user === "" || pass === "") {
+                alert("Please fill all details!");
+            } else {
+                alert("Welcome to Zingly, " + user + "!");
+                // Yahan se hum user ko home page par bhej sakte hain
+            }
+        }
+    </script>
+</body>
+</html>

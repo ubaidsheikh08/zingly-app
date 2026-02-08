@@ -1,0 +1,101 @@
+/* Zingly Profile Page - Professional Styling */
+
+/* 1. Profile Header Layout */
+.profile-header {
+    display: flex;
+    align-items: center;
+    gap: 60px; /* Photo aur text ke beech ka fasla */
+    padding: 40px 20px;
+    border-bottom: 1px solid #dbdbdb;
+    margin-bottom: 20px;
+}
+
+/* 2. Profile Picture (Large) */
+.profile-pic-large {
+    width: 155px;
+    height: 155px;
+    border-radius: 50%;
+    background: #1e3c72; /* Login Page wala Blue */
+    flex-shrink: 0;
+    border: 1px solid #dbdbdb;
+}
+
+/* 3. User Info & Stats */
+.profile-info h2 {
+    font-size: 28px;
+    font-weight: 300;
+    margin-bottom: 20px;
+}
+
+.profile-stats {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 20px;
+    list-style: none;
+}
+
+.profile-stats li {
+    font-size: 16px;
+    color: #262626;
+}
+
+.profile-stats li strong {
+    font-weight: 600;
+}
+
+.profile-bio {
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+/* 4. Posts Grid (Instagram Style) */
+.post-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 Photos ek line mein */
+    gap: 25px; /* Photos ke beech ka gap */
+    padding-top: 10px;
+}
+
+.grid-item {
+    aspect-ratio: 1/1; /* Photo ko hamesha square rakhta hai */
+    background-color: #efefef;
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+    border-radius: 4px;
+}
+
+.grid-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Photo stretch nahi hogi */
+    transition: filter 0.3s;
+}
+
+.grid-item:hover img {
+    filter: brightness(0.8); /* Hover par thoda dark effect */
+}
+
+/* 5. Edit Profile Button (Optional) */
+.edit-btn {
+    background: transparent;
+    border: 1px solid #dbdbdb;
+    padding: 5px 15px;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+/* Responsive (Mobile ke liye) */
+@media (max-width: 600px) {
+    .profile-header {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+    .post-grid {
+        gap: 3px;
+    }
+}

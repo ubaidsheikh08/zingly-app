@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zingly | Messages</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="messages.css">
+</head>
+<body>
+    <div class="app-wrapper">
+        <aside class="sidebar">
+            <header class="sb-header">
+                <h3>ubaidsheikh08 <i class="fas fa-chevron-down"></i></h3>
+                <i class="far fa-edit"></i>
+            </header>
+
+            <div class="sb-search">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search or ask Meta AI">
+                </div>
+            </div>
+
+            <div class="notes-area">
+                <div class="note-item">
+                    <div class="avatar user-note"><span class="note-tag">Add note</span></div>
+                    <span>Your note</span>
+                </div>
+                <div class="note-item">
+                    <div class="avatar online"></div>
+                    <span>king 👑</span>
+                </div>
+            </div>
+
+            <div class="chats-list">
+                <div class="list-head">
+                    <h4>Messages</h4>
+                    <span class="req-link">Requests</span>
+                </div>
+                <div class="user-row active">
+                    <div class="avatar online"></div>
+                    <div class="user-meta">
+                        <p class="name">Ali_Explorer</p>
+                        <p class="status">Active 20m ago</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <main class="chat-main">
+            <header class="chat-header">
+                <div class="header-user">
+                    <div class="avatar-small"></div>
+                    <div>
+                        <h4>Ali_Explorer</h4>
+                        <small>Active Now</small>
+                    </div>
+                </div>
+                <div class="header-icons">
+                    <i class="fas fa-phone"></i>
+                    <i class="fas fa-video"></i>
+                    <i class="fas fa-circle-info"></i>
+                </div>
+            </header>
+
+            <div class="messages-flow" id="chatBox">
+                <div class="msg received"><div class="bubble">Bhai, kahan ho?</div></div>
+                <div class="msg sent"><div class="bubble">Bus ghar ja raha hoon.</div></div>
+            </div>
+
+            <div class="input-section">
+                <div class="input-container">
+                    <i class="far fa-smile icon-btn" id="emojiBtn"></i>
+                    <input type="text" placeholder="Message..." id="msgInput">
+                    <div class="action-icons">
+                        <i class="fas fa-microphone icon-btn"></i>
+                        <i class="far fa-image icon-btn"></i>
+                        <i class="far fa-heart icon-btn"></i>
+                    </div>
+                </div>
+                <button class="send-trigger" id="sendBtn">Send</button>
+            </div>
+        </main>
+    </div>
+
+    <script>
+const input = document.getElementById('msgInput');
+const box = document.getElementById('chatBox');
+const sendBtn = document.getElementById('sendBtn');
+
+function performSend() {
+    const text = input.value.trim();
+    if (text !== "") {
+        const msgDiv = document.createElement('div');
+        msgDiv.className = 'msg sent';
+        // Yahan simple string use ki hai taake error na aaye
+        msgDiv.innerHTML = '<div class="bubble">' + text + '</div>';
+        
+        box.appendChild(msgDiv);
+        input.value = "";
+        box.scrollTop = box.scrollHeight;
+    }
+}
+
+// 1. Click event for button
+sendBtn.addEventListener('click', performSend);
+
+// 2. Enter key event
+input.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') {
+        performSend();
+    }
+});
+
+// 3. Emoji simple click
+const emojiBtn = document.getElementById('emojiBtn');
+if(emojiBtn) {
+    emojiBtn.onclick = () => {
+        input.value += "😊";
+        input.focus();
+    };
+}
+    </script>
+</body>
+</html>

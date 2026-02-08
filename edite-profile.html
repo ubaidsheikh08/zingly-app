@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Edit Profile - Zingly</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        <link rel="stylesheet" href="home.css">
+        <link rel="stylesheet" href="edite-profile.css">
+     </head>
+    <body>
+        <nav class="navbar">
+            <div class="nav-content">
+                <h1 class="brand" onclick="location.href='home.html'" style="cursor: pointer;">Zingly</h1>
+                <div class="nav-icons">
+                    <i class="fas fa-home" onclick="location.href='home.html'" style="cursor: pointer;"></i>
+                    <a href="messages.html" style="color: black;"><i class="far fa-paper-plane"></i></a>
+                    <a href="explore.html" style="color: black;"><i class="far fa-compass"></i></a>
+                    <a href="profile.html"><div class="nav-user-avatar"></div></a>
+                </div>
+            </div>
+        </nav>
+
+    <main class="edit-container">
+        <div class="cover-box" id="coverPreview" onclick="document.getElementById('coverInput').click()">
+            <span id="coverText">Change Cover Photo</span>
+            <input type="file" id="coverInput" hidden accept="image/*">
+            
+            <div class="profile-box" id="profilePreview" onclick="event.stopPropagation(); document.getElementById('profileInput').click()">
+                <input type="file" id="profileInput" hidden accept="image/*">
+            </div>
+        </div>
+
+        <div class="edit-fields">
+            <label>Full Name</label>
+            <input type="text" placeholder="Enter your name">
+            <label>Username</label>
+            <input type="text" placeholder="Enter username">
+            <button class="save-btn">Save Changes</button>
+        </div>
+    </main>
+
+    <script>
+        // Profile Picture Preview handler
+        document.getElementById('profileInput').addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (file) {
+                const url = URL.createObjectURL(file);
+                document.getElementById('profilePreview').style.backgroundImage = 'url(' + url + ')';
+            }
+        });
+
+        // Cover Photo Preview handler
+        document.getElementById('coverInput').addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (file) {
+                const url = URL.createObjectURL(file);
+                const cover = document.getElementById('coverPreview');
+                cover.style.backgroundImage = 'url(' + url + ')';
+                cover.style.backgroundSize = 'cover';
+                cover.style.backgroundPosition = 'center';
+                document.getElementById('coverText').style.display = 'none';
+            }
+        });
+    </script>
+
+</body>
+</html>

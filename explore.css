@@ -1,0 +1,39 @@
+/* Explore Page Styling */
+
+.explore-container {
+    max-width: 935px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+.explore-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Ek line mein 3 photos */
+    gap: 20px;
+}
+
+.explore-item {
+    aspect-ratio: 1/1; /* Square shape */
+    background-color: #ddd;
+    border-radius: 4px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.explore-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.explore-item:hover {
+    filter: brightness(0.8); /* Hover effect */
+}
+
+/* Mobile responsive */
+@media (max-width: 600px) {
+    .explore-grid {
+        gap: 3px; /* Mobile par kam gap */
+    }
+}

@@ -1,0 +1,90 @@
+body {
+    margin: 0;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); /* Instagram style gradient */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-container {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    width: 350px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    text-align: center;
+}
+
+.logo {
+    font-size: 42px;
+    font-weight: 800;
+    color: #4a148c;
+    letter-spacing: -1px;
+}
+
+.tagline {
+    color: #8e8e8e;
+    margin-bottom: 30px;
+}
+
+input {
+    width: 100%;
+    padding: 14px;
+    margin: 8px 0;
+    border: 1px solid #efefef;
+    border-radius: 10px;
+    background: #fafafa;
+    box-sizing: border-box;
+}
+
+input:focus {
+    border-color: #a1a1a1;
+    outline: none;
+}
+
+.login-btn {
+    width: 100%;
+    padding: 12px;
+    background: #0095f6;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: 0.3s;
+}
+
+.login-btn:hover {
+    background: #1877f2;
+}
+
+.or-divider {
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+    color: #8e8e8e;
+}
+
+.or-divider::before, .or-divider::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: #dbdbdb;
+    margin: 0 10px;
+}
+
+.google-btn {
+    width: 100%;
+    padding: 10px;
+    background: white;
+    border: 1px solid #dbdbdb;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-weight: 500;
+}
